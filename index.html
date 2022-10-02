@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmarks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark">
+    <div id="formContainer" class="form-container d-none bg-dark position-fixed py-5 ">
+        <form id="bookmarkForm" onsubmit="event.preventDefault()" class="m-auto bg-light p-4 rounded-3 position-relative">
+            <div class="path bg-dark position-absolute">
+                <button class="btn btn-danger position-absolute custom-btn close-btn">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h3>Bookmarks <i class="bi bi-bookmark-plus-fill text-danger py-2"></i></h3>
+            <h4 id="errorInfo" class="d-none bg-warning text-dark px-3 py-2 rounded-1">err</h4>
+            <div id="formBasicPart" class="d-block">
+                <div class="form-group pb-4">
+                    <label class="py-2" for="bookmark-name">Bookmark Name:</label>
+                    <input id="bookmarkName" class="form-control" type="text" placeholder=" exmaple : Facebook"
+                        autocomplete="off">
+                </div>
+    
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <input id="bookmarkURLProtocol" class="input-group-text" id="basic-addon3" value="https://">
+                    </div>
+                    <input id="bookmarkURL" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                        placeholder=" exmaple : www.facebook.com" autocomplete="off">
+                </div>
+            </div>
+
+            <h4 id="fileUploadUpperText">or add with exist file</h4>
+
+            <div class="input-group mb-3">
+                <input id="bookmarksFile" type="file" class="form-control " id="inputGroupFile01">
+            </div>
+            <div class="mb-3 d-flex align-items-center position-relative">
+                <img id="imgUserTest" class="d-block img-thumbnail img-form me-3" src="assets/img-placeholder.jpeg" alt="">
+                <div id="indicatorSpin" class="" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+            <button id="addBookMark" class="btn btn-warning">add bookmark</button>
+        </form>
+    </div>
+    <div id="itemsContainer" class="container d-none w-75 m-0 py-3 d-flex justify-content-start align-items-center">
+            <div class=" w-100 rounded-2 py-3">
+                <div id="bookmarks" class="row m-0 py-3 w-100">
+                    <div class="col text-center text-white display-4">blank !!</div>
+                </div>
+            </div>
+            <div class="position-fixed bottom-0 end-0 my-4 mx-5">
+                <button class="btn btn-secondary downoladbookmarks d-flex my-3">
+                    <i class="fa fa-download"></i>
+                </button>
+                <button class="btn btn-secondary open-btn d-flex my-3">
+                    <i class="bi bi-bookmark-plus"></i>
+                </button>
+            </div>
+    </div>
+    <div class="intro d-none text-bg-warning p-5 w-25 position-absolute top-0 end-0 m-3 d-flex justify-content-center align-items-center">
+        <button id="introCloseButton" class="btn btn-danger position-absolute custom-btn top-0 end-0 m-2">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="m-2">
+            <p>keyboard shotcuts will helping you</p>
+            <ul>
+                <li><kbd>alt-left</kbd> <kbd> 0.3s</kbd> <kbd>a</kbd> to toggle bookmark form</li>
+                <li><kbd>esc</kbd> to close bookmark form</li>
+                <li><kbd>enter</kbd> to submit bookmark form</li>
+            </ul>
+            <p> this intro will hide automatic after third session :)</p>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
