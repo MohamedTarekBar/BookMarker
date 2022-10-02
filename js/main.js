@@ -88,6 +88,7 @@ function addBookmarkButtonTapped () {
             addBookmarksToarray (bookmark);
             clearInputs ();
             hideFormContainer ();
+            firstTimeVisit();
           } else {
             var bookmark = {
               name: bookmarkName.value,
@@ -97,6 +98,7 @@ function addBookmarkButtonTapped () {
             addBookmarksToarray (bookmark);
             clearInputs ();
             hideFormContainer ();
+            firstTimeVisit();
           }
         }
       );
@@ -408,6 +410,20 @@ function firstTimeVisit () {
     }
   }
 }
+
+(function () {
+  const mdScreen = window.matchMedia('(max-width: 700px)');
+  mdScreen.onchange = (e) => {
+      if (e.matches) {
+        var intro = document.querySelector ('.intro');
+        intro.classList.replace ('d-block', 'd-none');
+        console.log(e)
+      } else {
+        firstTimeVisit()
+      }
+  }
+})()
+
 function getbookmarksNames () {
   for (let i = 0; i < bookmarksArr.length; i++) {
     bookmarkNames.push (bookmarksArr[i].name);
